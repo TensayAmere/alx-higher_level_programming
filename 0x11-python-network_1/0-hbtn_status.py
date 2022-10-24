@@ -1,16 +1,10 @@
 #!/usr/bin/python3
-"""
-Python script that fetches https://intranet.hbtn.io/status
-"""
+""" Script to fetch webpage information """
 from urllib import request
-
-if __name__ == "__main__":
-
-    req = request.Request("https://intranet.hbtn.io/status")
-
-    with request.urlopen(req) as response:
-        body = response.read()
+with request.urlopen('https://intranet.hbtn.io/status') as response:
+    data = response.read()
+    data2 = data.decode('utf-8')
     print("Body response:")
-    print("\t- type: {}".format(type(body)))
-    print("\t- content: {}".format(body))
-    print("\t- utf8 content: {}".format(body.decode("utf-8")))
+    print("\t- type: {}".format(type(data)))
+    print("\t- content: {}".format(data))
+    print("\t- utf8 content: {}".format(data2))
