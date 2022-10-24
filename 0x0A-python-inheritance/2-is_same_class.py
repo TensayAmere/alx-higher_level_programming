@@ -16,4 +16,3 @@ def is_same_class(obj, a_class):
     otherwise False.
     """
     return obj.__class__ is a_class
-Footer
